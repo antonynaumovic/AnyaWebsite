@@ -1,10 +1,124 @@
 @import url("https://fonts.googleapis.com/css?family=Anton&display=swap");
-*,
-*:after,
-*:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+* {
   box-sizing: border-box; }
+
+.open {
+  z-index: 500;
+  position: absolute;
+  right: 35px;
+  top: 35px;
+  font-family: 'Anton', sans-serif;
+  padding: 8px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 50px;
+  right: 15px; }
+
+body {
+  font-family: 'Anton', sans-serif;
+  margin: 0;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  user-select: none;
+  background-color: #1b1b1b;
+  counter-reset: box; }
+
+.grid {
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+  display: flex;
+  padding: 10px;
+  width: 3000px;
+  height: 2000px;
+  flex-wrap: wrap;
+  background-color: #1b1b1b;
+  justify-content: space-around;
+  align-items: space-around;
+  cursor: drag; }
+  @media (max-width: 500px) {
+    .grid {
+      width: 1400px;
+      height: 1400px; } }
+  .grid .box {
+    position: relative;
+    z-index: 1;
+    margin: 10px;
+    flex: 1 1 20%;
+    counter-increment: box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 30px;
+    overflow: hidden; }
+    .grid .box:after {
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 2;
+      content: '';
+      width: 100%;
+      height: 100%;
+      transform-origin: center;
+      transition: transform 0.6s cubic-bezier(0.42, 0, 0.1, 1); }
+      .dragging .grid .box:after {
+        transform: scale(0.99); }
+    .grid .box:nth-child(1):after {
+      background-image: url("../img/main2.jpg"); }
+    .grid .box:nth-child(2):after {
+      background-image: url("../img/main3.jpg"); }
+    .grid .box:nth-child(3):after {
+      background-image: url("../img/main4.jpg"); }
+    .grid .box:nth-child(4):after {
+      background-image: url("../img/main5.jpg"); }
+    .grid .box:nth-child(5):after {
+      background-image: url("../img/main6.jpg"); }
+    .grid .box:nth-child(6):after {
+      background-image: url("../img/main7.jpg"); }
+    .grid .box:nth-child(7):after {
+      background-image: url("../img/main8.jpg"); }
+    .grid .box:nth-child(8):after {
+      background-image: url("../img/main9.jpg"); }
+    .grid .box:nth-child(9):after {
+      background-image: url("../img/main10.jpg"); }
+    .grid .box:nth-child(10):after {
+      background-image: url("../img/main11.jpg"); }
+    .grid .box:nth-child(11):after {
+      background-image: url("../img/main12.jpg"); }
+    .grid .box:nth-child(12):after {
+      background-image: url("../img/main13.jpg"); }
+    .grid .box:nth-child(13):after {
+      background-image: url("../img/main14.jpg"); }
+    .grid .box:nth-child(14):after {
+      background-image: url("../img/main15.jpg"); }
+    .grid .box:nth-child(15):after {
+      background-image: url("../img/main16.jpg"); }
+    .grid .box:nth-child(16):after {
+      background-image: url("../img/main17.jpg"); }
+    .grid .box:nth-child(17):after {
+      background-image: url("../img/main18.jpg"); }
+    .grid .box:nth-child(18):after {
+      background-image: url("../img/main19.jpg"); }
+    .grid .box:nth-child(19):after {
+      background-image: url("../img/main20.jpg"); }
+    .grid .box:nth-child(20):after {
+      background-image: url("../img/main21.jpg"); }
+    .grid .box:nth-child(21):after {
+      background-image: url("../img/main22.jpg"); }
+    .grid .box:nth-child(22):after {
+      background-image: url("../img/main23.jpg"); }
+    .grid .box:nth-child(23):after {
+      background-image: url("../img/main24.jpg"); }
+    .grid .box:nth-child(3n + 2) {
+      flex: 1 1 10%; }
+    .grid .box:before {
+      content: counter(box); }
 
 /* The Overlay (background) */
 .open {
@@ -137,21 +251,6 @@
     filter: blur(0px);
     opacity: 1; } }
 
-body,
-html {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  overflow: hidden; }
-
-body {
-  font-family: 'Anton', sans-serif;
-  background-color: #161616;
-  margin: 0; }
-
-p, a {
-  font-family: 'Roboto', Arial, sans-serif; }
-
 .notice {
   position: absolute;
   top: 4vw;
@@ -161,21 +260,6 @@ p, a {
 
 .notice a {
   color: white; }
-
-/*slider styles*/
-.rgbShiftSlider {
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  /*mix-blend-mode: hard-light;*/
-  opacity: 0.85;
-  width: 100vw;
-  height: 100%;
-  overflow: hidden;
-  /*transform-origin : 50vw 300vh;*/
-  transform-origin: 50% 50%;
-  z-index: -5; }
 
 canvas {
   position: absolute;
@@ -201,8 +285,7 @@ nav a {
   right: 0;
   bottom: 0;
   z-index: 10;
-  background-color: black;
-  opacity: 1;
+  background-color: rgba(0, 0, 0, 0);
   filter: blur(0px);
   -webkit-filter: blur(0px);
   -moz-filter: blur(0px);
@@ -217,47 +300,8 @@ nav a {
   transition: all .5s ease; }
 
 .menu-active {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background-color: black;
-  opacity: 1;
   filter: blur(10px);
   -webkit-filter: blur(10px);
   -moz-filter: blur(10px);
   -o-filter: blur(10px);
   -ms-filter: blur(10px); }
-
-@keyframes MenuBlur {
-  from {
-    filter: blur(0px);
-    -webkit-filter: blur(0px);
-    -moz-filter: blur(0px);
-    -o-filter: blur(0px);
-    -ms-filter: blur(0px);
-    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' ><filter id='svgMask'><feGaussianBlur stdDeviation='0' /></filter></svg>#svgMask"); }
-  to {
-    filter: blur(10px);
-    -webkit-filter: blur(10px);
-    -moz-filter: blur(10px);
-    -o-filter: blur(10px);
-    -ms-filter: blur(10px);
-    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' ><filter id='svgMask'><feGaussianBlur stdDeviation='10' /></filter></svg>#svgMask"); } }
-
-@-webkit-keyframes MenuBlur {
-  from {
-    filter: blur(0px);
-    -webkit-filter: blur(0px);
-    -moz-filter: blur(0px);
-    -o-filter: blur(0px);
-    -ms-filter: blur(0px);
-    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' ><filter id='svgMask'><feGaussianBlur stdDeviation='0' /></filter></svg>#svgMask"); }
-  to {
-    filter: blur(10px);
-    -webkit-filter: blur(10px);
-    -moz-filter: blur(10px);
-    -o-filter: blur(10px);
-    -ms-filter: blur(10px);
-    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' ><filter id='svgMask'><feGaussianBlur stdDeviation='10' /></filter></svg>#svgMask"); } }

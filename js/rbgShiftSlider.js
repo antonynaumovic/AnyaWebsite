@@ -24,7 +24,7 @@ var images = [
   "./img/main23.jpg",
   "./img/main24.jpg"
 ]
-// instanciate slider
+// instanciate sWlider
 var rbgShiftSlider = new rbgShiftSlider({
   nav : true,
   navElement: '.scene-nav',
