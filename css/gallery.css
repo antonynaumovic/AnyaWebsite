@@ -45,6 +45,7 @@ body {
       width: 1400px;
       height: 1400px; } }
   .grid .box {
+    overflow-y: hidden;
     position: relative;
     z-index: 1;
     margin: 10px;
