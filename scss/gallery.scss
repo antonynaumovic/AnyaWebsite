@@ -1,0 +1,316 @@
+$primary-color: #000000;
+$white: #FFFFFF;
+$black: #000000;
+$bg-color: #010101;
+
+$blur: 20px;
+$shadow-opacity: 0.30;
+
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+.open{
+  z-index: 500;
+  position: absolute;
+right: 35px;
+top: 35px;
+  font-family: 'Anton', sans-serif;
+  padding: 8px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 50px;
+  right: 15px;
+}
+
+
+body {
+  font-family: 'Anton', sans-serif;
+  margin: 0;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  user-select: none;
+  background-color: rgb(27, 27, 27);
+  counter-reset: box;
+}
+.grid {
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+  display: flex;
+  padding: 10px;
+  width: 3000px;
+  height: 2000px;
+  flex-wrap: wrap;
+  background-color: rgb(27, 27, 27);
+  justify-content: space-around;
+  align-items: space-around;
+  cursor: drag;
+  
+  @media (max-width: 500px) {
+    width: 1400px;
+    height: 1400px;
+  }
+  
+  .box {
+    overflow-y: hidden;
+    position: relative;
+    z-index: 1;
+    margin: 10px;
+    flex: 1 1 20%;
+    counter-increment: box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 30px;
+    overflow: hidden;
+    
+    &:after {
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 2;
+      content: '';
+      width: 100%;
+      height: 100%;
+      transform-origin: center;
+      transition: transform .6s cubic-bezier(0.42, 0, 0.1, 1);
+      
+      .dragging & {
+        transform: scale(0.99);
+      }
+    }
+    
+    @for $i from 1 through 29 {
+      &:nth-child(#{$i}) {
+        &:after {
+          background-image: url("../img/main#{$i+1}.jpg");
+        }
+      }
+    }
+    
+    &:nth-child(3n + 2) {
+      flex: 1 1 10%;
+    }
+    
+    &:before {
+
+      content: counter(box);
+    }
+  }
+}
+
+
+        /* The Overlay (background) */
+.open{
+    z-index: 500;
+    position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+    font-family: 'Anton', sans-serif;
+    padding: 8px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 50px;
+    right: 15px;
+}
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 0;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 20; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0, 0, 0, 0); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    font-family: 'Anton', sans-serif;
+    top: 5%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+
+}
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    font-family: 'Anton', sans-serif;
+    padding: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 5;
+    font-size: 2rem;
+    font-size: 8vh;
+    color: $white;
+    margin-left: 15px;
+    line-height: 1;
+    color: #cecece;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay{
+    position: absolute;
+    top: 0px;
+    right: 45px;
+    font-size: 60px;
+  }
+  .closebtn {
+    position: absolute;
+    top: -5px;
+    right: 45px;
+      font-size: 60px;
+      font-size: 20vw;
+  }
+          
+          /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+          @media screen and (max-height: 450px) {
+            .overlay a {font-size: 20px}
+            .overlay .closebtn {
+              font-size: 40px;
+              top: 10px;
+              right: 25px;
+            }
+          }
+
+        #title{
+            z-index: 200;
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            height: 15vh;
+            width: 15vh;
+
+            h1{
+            text-align: justify;
+            position: relative;
+            text-transform: uppercase;
+            font-weight: 5;
+            font-size: 2rem;
+            font-size: 15vw;
+            color: $white;
+            margin-left: 15px;
+            line-height: .5;
+            -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+            }
+        }
+        @-webkit-keyframes text-focus-in {
+            0% {
+              -webkit-filter: blur(12px);
+                      filter: blur(12px);
+              opacity: 0;
+            }
+            100% {
+              -webkit-filter: blur(0px);
+                      filter: blur(0px);
+              opacity: 1;
+            }
+          }
+          @keyframes text-focus-in {
+            0% {
+              -webkit-filter: blur(12px);
+                      filter: blur(12px);
+              opacity: 0;
+            }
+            100% {
+              -webkit-filter: blur(0px);
+                      filter: blur(0px);
+              opacity: 1;
+            }
+          }
+
+
+        
+      
+
+        .notice {
+            position: absolute;
+            top : 4vw;
+            right : 4vw;
+            color: white;
+            z-index: 1;
+
+        }
+
+        .notice a{
+            color: white;
+        }
+        
+        
+      
+
+        canvas {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 0;
+        }
+        
+        nav {
+            position: absolute;
+            top: 4vw;
+            left: 4vw;
+            z-index: 1;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 14px;
+        }
+        .MenuMask{
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10;
+            background-color: rgba(0,0,0, 0.0);
+            filter: blur(0px);
+            -webkit-filter: blur(0px);
+            -moz-filter: blur(0px);
+            -o-filter: blur(0px);
+            -ms-filter: blur(0px);
+            
+        }
+        .mask{
+            -webkit-transition: all .5s ease;  
+            -moz-transition: all .5s ease;  
+            -o-transition: all .5s ease;  
+            -ms-transition: all .5s ease;  
+            transition: all .5s ease;
+            
+        }
+        .menu-active{
+            filter: blur(10px);
+            -webkit-filter: blur(10px);
+            -moz-filter: blur(10px);
+            -o-filter: blur(10px);
+            -ms-filter: blur(10px);
+            
+            
+        }
+      
