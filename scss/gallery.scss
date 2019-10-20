@@ -23,6 +23,7 @@ top: 35px;
   color: #ffffff;
   font-size: 50px;
   right: 15px;
+  cursor: pointer;
 }
 
 
@@ -122,6 +123,7 @@ body {
     color: #ffffff;
     font-size: 50px;
     right: 15px;
+    cursor: pointer;
 }
 .overlay {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */   
@@ -183,6 +185,7 @@ body {
     right: 45px;
       font-size: 60px;
       font-size: 20vw;
+      cursor: pointer;
   }
           
           /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */

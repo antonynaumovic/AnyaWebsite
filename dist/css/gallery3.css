@@ -12,8 +12,7 @@
   text-decoration: none;
   color: #ffffff;
   font-size: 50px;
-  right: 15px;
-  cursor: pointer; }
+  right: 15px; }
 
 body {
   font-family: 'Anton', sans-serif;
@@ -43,14 +42,14 @@ body {
   cursor: drag; }
   @media (max-width: 500px) {
     .grid {
-      width: 1400px;
-      height: 1400px; } }
+      height: 800px;
+      height: 800px; } }
   .grid .box {
     overflow-y: hidden;
     position: relative;
     z-index: 1;
     margin: 10px;
-    flex: 1 1 20%;
+    flex: 1 1 25%;
     counter-increment: box;
     display: flex;
     justify-content: center;
@@ -72,65 +71,17 @@ body {
       .dragging .grid .box:after {
         transform: scale(0.99); }
     .grid .box:nth-child(1):after {
-      background-image: url("../img/main2.jpg"); }
+      background-image: url("../img/exhib2.jpg"); }
     .grid .box:nth-child(2):after {
-      background-image: url("../img/main3.jpg"); }
+      background-image: url("../img/exhib3.jpg"); }
     .grid .box:nth-child(3):after {
-      background-image: url("../img/main4.jpg"); }
+      background-image: url("../img/exhib4.jpg"); }
     .grid .box:nth-child(4):after {
-      background-image: url("../img/main5.jpg"); }
+      background-image: url("../img/exhib5.jpg"); }
     .grid .box:nth-child(5):after {
-      background-image: url("../img/main6.jpg"); }
-    .grid .box:nth-child(6):after {
-      background-image: url("../img/main7.jpg"); }
-    .grid .box:nth-child(7):after {
-      background-image: url("../img/main8.jpg"); }
-    .grid .box:nth-child(8):after {
-      background-image: url("../img/main9.jpg"); }
-    .grid .box:nth-child(9):after {
-      background-image: url("../img/main10.jpg"); }
-    .grid .box:nth-child(10):after {
-      background-image: url("../img/main11.jpg"); }
-    .grid .box:nth-child(11):after {
-      background-image: url("../img/main12.jpg"); }
-    .grid .box:nth-child(12):after {
-      background-image: url("../img/main13.jpg"); }
-    .grid .box:nth-child(13):after {
-      background-image: url("../img/main14.jpg"); }
-    .grid .box:nth-child(14):after {
-      background-image: url("../img/main15.jpg"); }
-    .grid .box:nth-child(15):after {
-      background-image: url("../img/main16.jpg"); }
-    .grid .box:nth-child(16):after {
-      background-image: url("../img/main17.jpg"); }
-    .grid .box:nth-child(17):after {
-      background-image: url("../img/main18.jpg"); }
-    .grid .box:nth-child(18):after {
-      background-image: url("../img/main19.jpg"); }
-    .grid .box:nth-child(19):after {
-      background-image: url("../img/main20.jpg"); }
-    .grid .box:nth-child(20):after {
-      background-image: url("../img/main21.jpg"); }
-    .grid .box:nth-child(21):after {
-      background-image: url("../img/main22.jpg"); }
-    .grid .box:nth-child(22):after {
-      background-image: url("../img/main23.jpg"); }
-    .grid .box:nth-child(23):after {
-      background-image: url("../img/main24.jpg"); }
-    .grid .box:nth-child(24):after {
-      background-image: url("../img/main25.jpg"); }
-    .grid .box:nth-child(25):after {
-      background-image: url("../img/main26.jpg"); }
-    .grid .box:nth-child(26):after {
-      background-image: url("../img/main27.jpg"); }
-    .grid .box:nth-child(27):after {
-      background-image: url("../img/main28.jpg"); }
-    .grid .box:nth-child(28):after {
-      background-image: url("../img/main29.jpg"); }
-    .grid .box:nth-child(29):after {
-      background-image: url("../img/main30.jpg"); }
+      background-image: url("../img/exhib6.jpg"); }
     .grid .box:nth-child(3n + 2) {
-      flex: 1 1 10%; }
+      flex: 1 1 20%; }
     .grid .box:before {
       content: counter(box); }
 

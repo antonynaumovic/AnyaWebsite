@@ -3,20 +3,112 @@ $white: #FFFFFF;
 $black: #000000;
 $bg-color: #010101;
 
-
 $blur: 20px;
 $shadow-opacity: 0.30;
 
 @import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
 
+* {
+	box-sizing: border-box;
+}
 
-*,
-        *:after,
-        *:before {
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box; 
+.open{
+  z-index: 500;
+  position: absolute;
+right: 35px;
+top: 35px;
+  font-family: 'Anton', sans-serif;
+  padding: 8px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 50px;
+  right: 15px;
+}
+
+
+body {
+  font-family: 'Anton', sans-serif;
+  margin: 0;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  user-select: none;
+  background-color: rgb(27, 27, 27);
+  counter-reset: box;
+}
+.grid {
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+  display: flex;
+  padding: 10px;
+  width: 3000px;
+  height: 2000px;
+  flex-wrap: wrap;
+  background-color: rgb(27, 27, 27);
+  justify-content: space-around;
+  align-items: space-around;
+  cursor: drag;
+  
+  @media (max-width: 500px) {
+    height: 800px;
+    height: 800px;
+  }
+  
+  .box {
+    overflow-y: hidden;
+    position: relative;
+    z-index: 1;
+    margin: 10px;
+    flex: 1 1 25%;
+    counter-increment: box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 30px;
+    overflow: hidden;
+    
+    &:after {
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 2;
+      content: '';
+      width: 100%;
+      height: 100%;
+      transform-origin: center;
+      transition: transform .6s cubic-bezier(0.42, 0, 0.1, 1);
+      
+      .dragging & {
+        transform: scale(0.99);
+      }
+    }
+    
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        &:after {
+          background-image: url("../img/exhib#{$i+1}.jpg");
         }
+      }
+    }
+    
+    &:nth-child(3n + 2) {
+      flex: 1 1 20%;
+    }
+    
+    &:before {
+
+      content: counter(box);
+    }
+  }
+}
+
+
         /* The Overlay (background) */
 .open{
     z-index: 500;
@@ -41,7 +133,7 @@ $shadow-opacity: 0.30;
     left: 0;
     top: 0;
     background-color: rgb(0,0,0); /* Black fallback color */
-    background-color: rgba(0,0,0, 0.0); /* Black w/opacity */
+    background-color: rgba(0, 0, 0, 0); /* Black w/opacity */
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
   }
@@ -70,7 +162,8 @@ $shadow-opacity: 0.30;
     margin-left: 15px;
     line-height: 1;
     color: #cecece;
-    display: block; /* Display block instead of inline */
+    display: block; 
+    /* Display block instead of inline */
     transition: 0.3s; /* Transition effects on hover (color) */
   }
   
@@ -127,6 +220,7 @@ $shadow-opacity: 0.30;
 	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
             }
         }
+
         @-webkit-keyframes text-focus-in {
             0% {
               -webkit-filter: blur(12px);
@@ -154,24 +248,7 @@ $shadow-opacity: 0.30;
 
 
         
-        body,
-        html {
-            position: relative;
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-        }
-        
-        body {
-          overflow-y: hidden;
-            font-family: 'Anton', sans-serif;
-            background-color: #161616;
-            margin: 0;
-        }
-
-        p, a {
-            font-family: 'Roboto', Arial, sans-serif;
-        }
+      
 
         .notice {
             position: absolute;
@@ -187,21 +264,7 @@ $shadow-opacity: 0.30;
         }
         
         
-        /*slider styles*/
-        .rgbShiftSlider {
-            display: block;
-            position: absolute;
-            left: 0;
-            top: 0;
-            /*mix-blend-mode: hard-light;*/
-            opacity: 0.85;
-            width: 100vw;
-            height: 100%;
-            overflow: hidden;
-            /*transform-origin : 50vw 300vh;*/
-            transform-origin: 50% 50%;
-            z-index: -5;
-        }
+      
 
         canvas {
             position: absolute;
@@ -229,8 +292,7 @@ $shadow-opacity: 0.30;
             right: 0;
             bottom: 0;
             z-index: 10;
-            background-color: black;
-            opacity: 1;
+            background-color: rgba(0,0,0, 0.0);
             filter: blur(0px);
             -webkit-filter: blur(0px);
             -moz-filter: blur(0px);
@@ -247,13 +309,6 @@ $shadow-opacity: 0.30;
             
         }
         .menu-active{
-            position: absolute;
-            left: 0;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            background-color: black;
-            opacity: 1;
             filter: blur(10px);
             -webkit-filter: blur(10px);
             -moz-filter: blur(10px);
@@ -262,43 +317,4 @@ $shadow-opacity: 0.30;
             
             
         }
-        
-
-        @keyframes MenuBlur {
-            from{
-                filter: blur(0px);
-                -webkit-filter: blur(0px);
-                -moz-filter: blur(0px);
-                -o-filter: blur(0px);
-                -ms-filter: blur(0px);
-                filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' ><filter id='svgMask'><feGaussianBlur stdDeviation='0' /></filter></svg>#svgMask");
-            }
-            to {
-                filter: blur(10px);
-                -webkit-filter: blur(10px);
-                -moz-filter: blur(10px);
-                -o-filter: blur(10px);
-                -ms-filter: blur(10px);
-                filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' ><filter id='svgMask'><feGaussianBlur stdDeviation='10' /></filter></svg>#svgMask");
-            }
-        }
-        
-        @-webkit-keyframes MenuBlur {
-            from{
-                filter: blur(0px);
-                -webkit-filter: blur(0px);
-                -moz-filter: blur(0px);
-                -o-filter: blur(0px);
-                -ms-filter: blur(0px);
-                filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' ><filter id='svgMask'><feGaussianBlur stdDeviation='0' /></filter></svg>#svgMask");
-            }
-            to {
-                filter: blur(10px);
-                -webkit-filter: blur(10px);
-                -moz-filter: blur(10px);
-                -o-filter: blur(10px);
-                -ms-filter: blur(10px);
-                filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' ><filter id='svgMask'><feGaussianBlur stdDeviation='10' /></filter></svg>#svgMask");
-            }
-        }
-        
+      

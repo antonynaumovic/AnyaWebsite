@@ -63,7 +63,7 @@ body {
     position: relative;
     z-index: 1;
     margin: 10px;
-    flex: 1 1 20%;
+    flex: 1 1 25%;
     counter-increment: box;
     display: flex;
     justify-content: center;
@@ -98,7 +98,7 @@ body {
     }
     
     &:nth-child(3n + 2) {
-      flex: 1 1 10%;
+      flex: 1 1 20%;
     }
     
     &:before {
@@ -122,6 +122,7 @@ body {
     color: #ffffff;
     font-size: 50px;
     right: 15px;
+    cursor: pointer;
 }
 .overlay {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */   
@@ -184,6 +185,7 @@ body {
     right: 45px;
       font-size: 60px;
       font-size: 20vw;
+      cursor: pointer;
   }
           
           /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
