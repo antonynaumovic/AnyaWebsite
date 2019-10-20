@@ -118,6 +118,31 @@
     line-height: .5;
     -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
     animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both; }
+  #title h2 {
+    text-align: justify;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 5;
+    font-size: 3rem;
+    font-size: 5vw;
+    color: #FFFFFF;
+    margin-left: 15px;
+    line-height: .5;
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both; }
+  #title a {
+    font-family: 'Anton', sans-serif;
+    text-align: justify;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 5;
+    font-size: 3rem;
+    font-size: 5vw;
+    color: #FFFFFF;
+    margin-left: 15px;
+    line-height: .5;
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both; }
 
 @-webkit-keyframes text-focus-in {
   0% {
