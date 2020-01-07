@@ -119,8 +119,7 @@ class Grid {
     if (this.isDragging) {
       document.body.classList.add('dragging')
       console.log(mouse.startX - mouse.x)
-      this.endX = Math.max(-this.bounds.width / 2 + win.width, Math.min(this.x - (mouse.startX - mouse.x), this.bounds.width / 2))
-      this.endY = Math.max(-this.bounds.height / 2 + win.height, Math.min(this.y - (mouse.startY - mouse.y), this.bounds.height / 2))
+    
     }
     
     

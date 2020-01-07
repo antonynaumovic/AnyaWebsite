@@ -34,17 +34,13 @@ body {
   cursor: pointer;
   display: flex;
   padding: 10px;
-  width: 3000px;
-  height: 2000px;
+  width: 100vw;
+  height: 100vh;
   flex-wrap: wrap;
   background-color: #1b1b1b;
   justify-content: space-around;
   align-items: space-around;
   cursor: drag; }
-  @media (max-width: 500px) {
-    .grid {
-      width: 1400px;
-      height: 1400px; } }
   .grid .box {
     overflow-y: hidden;
     position: relative;

@@ -101,7 +101,7 @@
 
 #title {
   z-index: 200;
-  position: absolute;
+  position: relative;
   left: 15px;
   top: 15px;
   height: 15vh;
@@ -112,7 +112,7 @@
     text-transform: uppercase;
     font-weight: 5;
     font-size: 2rem;
-    font-size: 15vw;
+    font-size: 20vmin;
     color: #FFFFFF;
     margin-left: 15px;
     line-height: .5;
