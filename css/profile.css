@@ -1,25 +1,27 @@
 @import url("https://fonts.googleapis.com/css?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap");
 *,
 *:after,
 *:before {
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 /* The Overlay (background) */
 .open {
   z-index: 500;
   position: absolute;
-  z-index: 3;
+  z-index: 300;
   right: 35px;
   top: 35px;
-  font-family: 'Anton', sans-serif;
+  font-family: 'Raleway', sans-serif;
   padding: 8px;
   text-decoration: none;
   color: #ffffff;
   font-size: 50px;
   right: 15px;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .overlay {
   /* Height & width depends on how you want to reveal the overlay (see JS below) */
@@ -37,13 +39,15 @@
   /* Black w/opacity */
   overflow-x: hidden;
   /* Disable horizontal scroll */
+  -webkit-transition: 0.5s;
   transition: 0.5s;
-  /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */ }
+  /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
 
 /* Position the content inside the overlay */
 .overlay-content {
   position: relative;
-  font-family: 'Anton', sans-serif;
+  font-family: 'Raleway', sans-serif;
   top: 5%;
   /* 25% from the top */
   width: 100%;
@@ -51,36 +55,41 @@
   text-align: center;
   /* Centered text/links */
   margin-top: 30px;
-  /* 30px top margin to avoid conflict with the close button on smaller screens */ }
+  /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
 
 /* The navigation links inside the overlay */
 .overlay a {
-  font-family: 'Anton', sans-serif;
+  font-family: 'Raleway', sans-serif;
   padding: 8px;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 5;
   font-size: 2rem;
-  font-size: 8vh;
+  font-size: 7vh;
   color: #FFFFFF;
-  margin-left: 15px;
+  margin-left: 0;
   line-height: 1;
   color: #cecece;
   display: block;
   /* Display block instead of inline */
+  -webkit-transition: 0.3s;
   transition: 0.3s;
-  /* Transition effects on hover (color) */ }
+  /* Transition effects on hover (color) */
+}
 
 /* When you mouse over the navigation links, change their color */
 .overlay a:hover, .overlay a:focus {
-  color: #f1f1f1; }
+  color: #f1f1f1;
+}
 
 /* Position the close button (top right corner) */
 .overlay {
   position: absolute;
   top: 0px;
   right: 45px;
-  font-size: 60px; }
+  font-size: 60px;
+}
 
 .closebtn {
   position: absolute;
@@ -88,99 +97,130 @@
   right: 45px;
   font-size: 60px;
   font-size: 20vw;
-  cursor: pointer; }
-
-/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-@media screen and (max-height: 450px) {
-  .overlay a {
-    font-size: 20px; }
-  .overlay .closebtn {
-    font-size: 40px;
-    top: 10px;
-    right: 25px; } }
+  cursor: pointer;
+}
 
 #title {
   z-index: 200;
   position: relative;
   left: 15px;
   top: 15px;
-  width: 15vh; }
-  #title h1 {
-    text-align: justify;
-    position: relative;
-    text-transform: uppercase;
-    font-weight: 5;
-    font-size: 2rem;
-    font-size: 20vmin;
-    color: #FFFFFF;
-    margin-left: 15px;
-    line-height: .5;
-    -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both; }
+  width: 15vh;
+}
+
+#title h1 {
+  text-align: justify;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 5;
+  font-size: 2rem;
+  font-size: 20vmin;
+  color: #FFFFFF;
+  margin-left: 15px;
+  line-height: .5;
+  width: 15vw !important;
+  pointer-events: none !important;
+  -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.siding {
+  width: 50%;
+  height: 100vh;
+  background-color: white;
+  position: absolute;
+}
 
 #body {
   z-index: 200;
   position: relative;
-  width: 100vw; }
-  #body h2 {
-    text-align: justify;
-    position: relative;
-    text-transform: uppercase;
-    width: auto;
-    font-weight: 5;
-    font-size: 4vmin;
-    color: #FFFFFF;
-    margin-left: 15px;
-    margin-right: 15px;
-    line-height: 1.5;
-    -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both; }
+  width: 100vw;
+}
+
+#body h1 {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 12vw;
+  color: #4A4A4A;
+  margin: 0;
+  margin-left: 5%;
+  margin-top: 5%;
+  line-height: 12vw;
+  width: 100vw;
+  pointer-events: none;
+}
+
+#body p {
+  position: relative;
+  text-transform: uppercase;
+  width: auto;
+  height: 100%;
+  font-weight: 5;
+  font-size: 2.2vh;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  line-height: 1.5;
+  -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  color: #4A4A4A;
+}
 
 @-webkit-keyframes text-focus-in {
   0% {
     -webkit-filter: blur(12px);
     filter: blur(12px);
-    opacity: 0; }
+    opacity: 0;
+  }
   100% {
     -webkit-filter: blur(0px);
     filter: blur(0px);
-    opacity: 1; } }
+    opacity: 1;
+  }
+}
 
 @keyframes text-focus-in {
   0% {
     -webkit-filter: blur(12px);
     filter: blur(12px);
-    opacity: 0; }
+    opacity: 0;
+  }
   100% {
     -webkit-filter: blur(0px);
     filter: blur(0px);
-    opacity: 1; } }
+    opacity: 1;
+  }
+}
 
 body,
 html {
   position: relative;
   height: 100%;
   width: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 body {
   overflow-y: hidden;
-  font-family: 'Anton', sans-serif;
+  font-family: 'Raleway', sans-serif;
   background-color: #161616;
-  margin: 0; }
+  margin: 0;
+}
 
 p, a {
-  font-family: 'Roboto', Arial, sans-serif; }
+  font-family: 'Raleway', sans-serif;
+}
 
 .notice {
   position: absolute;
   top: 4vw;
   right: 4vw;
   color: white;
-  z-index: 1; }
+  z-index: 1;
+}
 
 .notice a {
-  color: white; }
+  color: white;
+}
 
 /*slider styles*/
 .rgbShiftSlider {
@@ -194,25 +234,30 @@ p, a {
   height: 100%;
   overflow: hidden;
   /*transform-origin : 50vw 300vh;*/
-  transform-origin: 50% 50%;
-  z-index: -5; }
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  z-index: -5;
+}
 
 canvas {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 0; }
+  z-index: 0;
+}
 
 nav {
   position: absolute;
   top: 4vw;
   left: 4vw;
-  z-index: 1; }
+  z-index: 1;
+}
 
 nav a {
   color: white;
   text-decoration: none;
-  margin-right: 14px; }
+  margin-right: 14px;
+}
 
 .MenuMask {
   position: absolute;
@@ -227,14 +272,13 @@ nav a {
   -webkit-filter: blur(0px);
   -moz-filter: blur(0px);
   -o-filter: blur(0px);
-  -ms-filter: blur(0px); }
+  -ms-filter: blur(0px);
+}
 
 .mask {
   -webkit-transition: all .5s ease;
-  -moz-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  -ms-transition: all .5s ease;
-  transition: all .5s ease; }
+  transition: all .5s ease;
+}
 
 .menu-active {
   position: absolute;
@@ -248,7 +292,8 @@ nav a {
   -webkit-filter: blur(10px);
   -moz-filter: blur(10px);
   -o-filter: blur(10px);
-  -ms-filter: blur(10px); }
+  -ms-filter: blur(10px);
+}
 
 @keyframes MenuBlur {
   from {
@@ -257,14 +302,17 @@ nav a {
     -moz-filter: blur(0px);
     -o-filter: blur(0px);
     -ms-filter: blur(0px);
-    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' ><filter id='svgMask'><feGaussianBlur stdDeviation='0' /></filter></svg>#svgMask"); }
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' ><filter id='svgMask'><feGaussianBlur stdDeviation='0' /></filter></svg>#svgMask");
+  }
   to {
     filter: blur(10px);
     -webkit-filter: blur(10px);
     -moz-filter: blur(10px);
     -o-filter: blur(10px);
     -ms-filter: blur(10px);
-    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' ><filter id='svgMask'><feGaussianBlur stdDeviation='10' /></filter></svg>#svgMask"); } }
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' ><filter id='svgMask'><feGaussianBlur stdDeviation='10' /></filter></svg>#svgMask");
+  }
+}
 
 @-webkit-keyframes MenuBlur {
   from {
@@ -273,11 +321,86 @@ nav a {
     -moz-filter: blur(0px);
     -o-filter: blur(0px);
     -ms-filter: blur(0px);
-    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' ><filter id='svgMask'><feGaussianBlur stdDeviation='0' /></filter></svg>#svgMask"); }
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' ><filter id='svgMask'><feGaussianBlur stdDeviation='0' /></filter></svg>#svgMask");
+  }
   to {
     filter: blur(10px);
     -webkit-filter: blur(10px);
     -moz-filter: blur(10px);
     -o-filter: blur(10px);
     -ms-filter: blur(10px);
-    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' ><filter id='svgMask'><feGaussianBlur stdDeviation='10' /></filter></svg>#svgMask"); } }
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' ><filter id='svgMask'><feGaussianBlur stdDeviation='10' /></filter></svg>#svgMask");
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 10px;
+    right: 25px;
+  }
+  .siding {
+    width: 100% !important;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  h1 {
+    color: white !important;
+    width: 15vw;
+  }
+  p {
+    color: white !important;
+    font-size: 2vw !important;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .siding {
+    width: 100% !important;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  h1 {
+    color: white !important;
+    padding-top: 5vh;
+    width: 15vw;
+  }
+  p {
+    color: white !important;
+    font-size: 2.4vh !important;
+  }
+}
+
+@media screen and (max-height: 320px) {
+  .siding {
+    width: 100% !important;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  h1 {
+    color: white !important;
+    padding-top: 5vh;
+    margin-right: 0 !important;
+    width: 50vw !important;
+  }
+  p {
+    color: white !important;
+    font-size: 2.4vw !important;
+  }
+}
+
+@media screen and (max-width: 700px) and (min-width: 451px) {
+  h1 {
+    width: 15vw;
+  }
+  p {
+    font-size: 3vw !important;
+  }
+}
+/*# sourceMappingURL=profile.css.map */
