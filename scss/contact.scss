@@ -9,6 +9,8 @@ $shadow-opacity: 0.30;
 
 @import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
+
 
 *,
         *:after,
@@ -24,7 +26,7 @@ $shadow-opacity: 0.30;
   z-index: 3;
   right: 35px;
   top: 35px;
-    font-family: 'Anton', sans-serif;
+  font-family: 'Raleway', sans-serif;
     padding: 8px;
     text-decoration: none;
     color: #ffffff;
@@ -49,7 +51,7 @@ $shadow-opacity: 0.30;
   /* Position the content inside the overlay */
   .overlay-content {
     position: relative;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Raleway', sans-serif;
     top: 5%; /* 25% from the top */
     width: 100%; /* 100% width */
     text-align: center; /* Centered text/links */
@@ -59,15 +61,15 @@ $shadow-opacity: 0.30;
   
   /* The navigation links inside the overlay */
   .overlay a {
-    font-family: 'Anton', sans-serif;
+    font-family: 'Raleway', sans-serif;
     padding: 8px;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 5;
     font-size: 2rem;
-    font-size: 8vh;
+    font-size: 7vh;
     color: $white;
-    margin-left: 15px;
+    margin-left: 0;
     line-height: 1;
     color: #cecece;
     display: block; /* Display block instead of inline */
@@ -140,7 +142,7 @@ $shadow-opacity: 0.30;
             animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
               }
             a{
-              font-family: 'Anton', sans-serif;
+              font-family: 'Raleway', sans-serif;
               text-align: justify;
               position: relative;
               text-transform: uppercase;
@@ -191,13 +193,13 @@ $shadow-opacity: 0.30;
         
         body {
           overflow-y: hidden;
-            font-family: 'Anton', sans-serif;
+          font-family: 'Raleway', sans-serif;
             background-color: #161616;
             margin: 0;
         }
 
         p, a {
-            font-family: 'Roboto', Arial, sans-serif;
+          font-family: 'Raleway', sans-serif;
         }
 
         .notice {

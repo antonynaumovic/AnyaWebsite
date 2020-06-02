@@ -9,6 +9,7 @@ $shadow-opacity: 0.30;
 
 @import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
 
 *,
         *:after,
@@ -21,10 +22,10 @@ $shadow-opacity: 0.30;
 .open{
     z-index: 500;
     position: absolute;
-  z-index: 3;
-  right: 35px;
-  top: 35px;
-    font-family: 'Anton', sans-serif;
+    z-index: 300;
+    right: 35px;
+    top: 35px;
+    font-family: 'Raleway', sans-serif;
     padding: 8px;
     text-decoration: none;
     color: #ffffff;
@@ -49,7 +50,7 @@ $shadow-opacity: 0.30;
   /* Position the content inside the overlay */
   .overlay-content {
     position: relative;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Raleway', sans-serif;
     top: 5%; /* 25% from the top */
     width: 100%; /* 100% width */
     text-align: center; /* Centered text/links */
@@ -59,15 +60,15 @@ $shadow-opacity: 0.30;
   
   /* The navigation links inside the overlay */
   .overlay a {
-    font-family: 'Anton', sans-serif;
+    font-family: 'Raleway', sans-serif;
     padding: 8px;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 5;
     font-size: 2rem;
-    font-size: 8vh;
+    font-size: 7vh;
     color: $white;
-    margin-left: 15px;
+    margin-left: 0;
     line-height: 1;
     color: #cecece;
     display: block; /* Display block instead of inline */
@@ -95,22 +96,13 @@ $shadow-opacity: 0.30;
       cursor: pointer;
   }
           
-          /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-          @media screen and (max-height: 450px) {
-            .overlay a {font-size: 20px}
-            .overlay .closebtn {
-              font-size: 40px;
-              top: 10px;
-              right: 25px;
-            }
-          }
+
 
         #title{
             z-index: 200;
-            position: absolute;
+            position: relative;
             left: 15px;
             top: 15px;
-            height: 15vh;
             width: 15vh;
 
             h1{
@@ -119,14 +111,61 @@ $shadow-opacity: 0.30;
             text-transform: uppercase;
             font-weight: 5;
             font-size: 2rem;
-            font-size: 15vw;
+            font-size: 20vmin;
             color: $white;
             margin-left: 15px;
             line-height: .5;
+            width: 15vw !important;
+            pointer-events: none !important;
             -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	          animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
             }
+          
         }
+
+        .siding{
+          width: 50%;
+          height: 100vh;
+          background-color: white;
+          position: absolute;
+          
+
+        }
+
+        #body{
+          z-index: 200;
+            position: relative;
+            width: 100vw;
+
+            h1{
+              position: relative;
+              text-transform: uppercase;
+              font-size: 12vw;
+              color: #4A4A4A;
+              margin: 0;
+              margin-left: 5%;
+              margin-top: 5%;
+              line-height: 12vw;
+              width: 100vw;
+              pointer-events: none;
+              
+              }
+            p{
+              position: relative;
+              text-transform: uppercase;
+              width: auto;
+              height: 100%;
+              font-weight: 5;
+              font-size: 2.2vh;
+              margin-left: 3vw;
+              margin-right: 3vw;
+              line-height: 1.5;
+              -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+              animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+              color: #4A4A4A;
+              }
+        }
+        
         @-webkit-keyframes text-focus-in {
             0% {
               -webkit-filter: blur(12px);
@@ -164,13 +203,13 @@ $shadow-opacity: 0.30;
         
         body {
           overflow-y: hidden;
-            font-family: 'Anton', sans-serif;
+          font-family: 'Raleway', sans-serif;
             background-color: #161616;
             margin: 0;
         }
 
         p, a {
-            font-family: 'Roboto', Arial, sans-serif;
+          font-family: 'Raleway', sans-serif;
         }
 
         .notice {
@@ -302,3 +341,81 @@ $shadow-opacity: 0.30;
             }
         }
         
+
+@media screen and (min-width: 450px) {
+
+
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 10px;
+    right: 25px;
+  }
+  .siding{
+    width: 100% !important;
+    height: 100vh;
+   
+    position: absolute;
+    background-color: rgba(0,0,0, 0.0);
+
+  }
+  h1{
+    color: white !important;
+    width: 15vw;
+  }
+  p{
+    color: white !important;
+    font-size: 2vw !important;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .siding{
+    width: 100% !important;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0,0,0, 0.0);
+
+  }
+  h1{
+    color: white !important;
+    padding-top: 5vh;
+    width: 15vw;
+  }
+  p{
+    color: white !important;
+    font-size: 2.4vh !important;
+  }
+}
+
+@media screen and (max-height: 320px) {
+  .siding{
+    width: 100% !important;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0,0,0, 0.0);
+
+  }
+  h1{
+    color: white !important;
+    padding-top: 5vh;
+    margin-right: 0 !important;
+    width: 50vw !important;
+  }
+  p{
+    color: white !important;
+    font-size: 2.4vw !important;
+  }
+}
+
+@media screen and (max-width: 700px) and (min-width: 451px) {
+  h1{
+    width: 15vw;
+  }
+  p{
+    font-size: 3vw !important;
+  }
+}
