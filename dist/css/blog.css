@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap");
 *,
 *:after,
 *:before {
@@ -13,7 +14,7 @@
   z-index: 3;
   right: 35px;
   top: 35px;
-  font-family: 'Anton', sans-serif;
+  font-family: 'Raleway', sans-serif;
   padding: 8px;
   text-decoration: none;
   color: #ffffff;
@@ -51,7 +52,7 @@ iframe {
 /* Position the content inside the overlay */
 .overlay-content {
   position: relative;
-  font-family: 'Anton', sans-serif;
+  font-family: 'Raleway', sans-serif;
   top: 5%;
   /* 25% from the top */
   width: 100%;
@@ -64,7 +65,7 @@ iframe {
 
 /* The navigation links inside the overlay */
 .overlay a {
-  font-family: 'Anton', sans-serif;
+  font-family: 'Raleway', sans-serif;
   padding: 8px;
   text-decoration: none;
   text-transform: uppercase;
@@ -175,13 +176,13 @@ html {
 
 body {
   overflow-y: hidden;
-  font-family: 'Anton', sans-serif;
+  font-family: 'Raleway', sans-serif;
   background-color: #161616;
   margin: 0;
 }
 
 p, a {
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 .notice {
